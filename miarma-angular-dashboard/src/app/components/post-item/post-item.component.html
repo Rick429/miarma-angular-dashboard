@@ -1,12 +1,15 @@
 <mat-card>
   <mat-card-header>
-      <div style="align-items: center;display: flex;">
+      <div class="head">
         <img class="avatar" src={{postInput.avataruser}} width="50px">
         <h3 class="nick">{{postInput.nick}}</h3>
       </div>
-      <button mat-raised-button style="width: 100px;">
-        <mat-icon>more_horiz</mat-icon>
-      </button>
+      <div>
+        <mat-icon [matMenuTriggerFor]="menu">more_horiz</mat-icon>
+        <mat-menu #menu="matMenu" >
+          <button mat-menu-item (click)="deletePost(postInput.id)">Eliminar</button>
+        </mat-menu>
+      </div>
   </mat-card-header>
   <mat-card-content>
     <div class="imgpost">
@@ -15,20 +18,12 @@
   </mat-card-content>
   <mat-action-list>
     <div>
-      <button mat-raised-button>
-        <mat-icon>favorite_border</mat-icon>
-      </button>
-      <button mat-raised-button>
-        <mat-icon>message</mat-icon>
-      </button>
-      <button mat-raised-button>
-        <mat-icon>send</mat-icon>
-      </button>
+      <mat-icon>favorite_border</mat-icon>
+      <mat-icon>message</mat-icon>
+      <mat-icon>send</mat-icon>
     </div>
     <div>
-      <button mat-raised-button>
         <mat-icon>bookmark_border</mat-icon>
-      </button>
     </div>
   </mat-action-list>
   <mat-card-footer>

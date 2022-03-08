@@ -1,6 +1,6 @@
 mat-card{
   width: 800px;
-  height: 700px;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
 }
@@ -27,7 +27,6 @@ mat-action-list{
   padding-left: 10px;
   font-weight: bolder;
   width: 100px;
-  float: left;
 }
 
 .footerdescripcion{
@@ -36,5 +35,17 @@ mat-action-list{
 
 mat-card-header{
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
+  padding-left: 0%;
+  margin-left: 0%;
+}
+
+.head{
+  align-items: center;
+  display: flex;
+  margin-right: 70%;
+}
+
+mat-icon{
+  padding: 5px 15px;
 }

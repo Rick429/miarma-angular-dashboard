@@ -23,4 +23,11 @@ export class PostService {
     })
     return this.http.get<PostResponse>(`${this.postBaseUrl}/all`, { headers: encabezados });
   }
+
+  eliminarPost(id:number) {
+    let encabezados= new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
+    })
+    return this.http.delete(`${this.postBaseUrl}/delete/${id}`, { headers: encabezados });
+  }
 }
