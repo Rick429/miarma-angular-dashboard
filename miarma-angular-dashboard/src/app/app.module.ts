@@ -11,6 +11,7 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PostListComponent } from './pages/post-list/post-list.component';
 import { PostItemComponent } from './components/post-item/post-item.component';
+import { TablasComponent } from './pages/tablas/tablas.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PostItemComponent } from './components/post-item/post-item.component';
     ToolbarComponent,
     RegisterComponent,
     PostListComponent,
-    PostItemComponent
+    PostItemComponent,
+    TablasComponent
   ],
   imports: [
     BrowserModule,
