@@ -9,8 +9,8 @@ const TOKEN = 'token';
 const DEFAULT_HEADERS = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    Accept: 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
+    'Accept': 'application/json',
+    //'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
   })
 };
 
@@ -24,6 +24,11 @@ export class PostService {
   postBaseUrl = `${environment.API_BASE_URL}${POST}`;
 
   findAllPosts(): Observable<PostResponse> {
-    return this.http.get<PostResponse>(`${this.postBaseUrl}/all`, DEFAULT_HEADERS);
+    let encabezados= new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
+    })
+    return this.http.get<PostResponse>(`${this.postBaseUrl}/all`, { headers: encabezados });
   }
 }
