@@ -6,13 +6,6 @@ import { PostResponse } from '../models/interfaces/post-response.interface';
 
 const POST = 'post';
 const TOKEN = 'token';
-const DEFAULT_HEADERS = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    //'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
-  })
-};
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +19,6 @@ export class PostService {
   findAllPosts(): Observable<PostResponse> {
     let encabezados= new HttpHeaders({
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
       'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
     })
     return this.http.get<PostResponse>(`${this.postBaseUrl}/all`, { headers: encabezados });

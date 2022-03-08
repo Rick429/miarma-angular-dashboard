@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-header>
+      <div style="align-items: center;display: flex;">
+        <img class="avatar" src={{postInput.avataruser}} width="50px">
+        <h3 class="nick">{{postInput.nick}}</h3>
+      </div>
+      <button mat-raised-button style="width: 100px;">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="imgpost">
+      <img src={{postInput.archivo}} width="100%" height="100%">
+    </div>
+  </mat-card-content>
+  <mat-action-list>
+    <div>
+      <button mat-raised-button>
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button mat-raised-button>
+        <mat-icon>message</mat-icon>
+      </button>
+      <button mat-raised-button>
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button mat-raised-button>
+        <mat-icon>bookmark_border</mat-icon>
+      </button>
+    </div>
+  </mat-action-list>
+  <mat-card-footer>
+    <div class="footerdescripcion">
+      <p>{{postInput.descripcion}}</p>
+    </div>
+  </mat-card-footer>
+</mat-card>
+<br>

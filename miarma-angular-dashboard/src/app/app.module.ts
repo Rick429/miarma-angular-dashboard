@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PostListComponent } from './pages/post-list/post-list.component';
+import { PostItemComponent } from './components/post-item/post-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PostListComponent } from './pages/post-list/post-list.component';
     LoginComponent,
     ToolbarComponent,
     RegisterComponent,
-    PostListComponent
+    PostListComponent,
+    PostItemComponent
   ],
   imports: [
     BrowserModule,

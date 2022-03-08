@@ -1,16 +1,26 @@
 <div class="contenedor">
-    <form class="example-form">
+    <form [formGroup]="formulario" class="example-form">
       <mat-card class="card">
         <span class="logo"><img src="../../../assets/img/logo_miarmapp.svg" width="200px"></span>
-        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-form-field appearance="outline" class="field-width">
           <mat-label>Nombre de usuario</mat-label>
-          <input matInput placeholder="Escribe tu nombre de usuario" [(ngModel)]="loginDto.nick" name="nick">
+          <input matInput placeholder="Nombre de usuario" name="nick" formControlName="nick" required>
         </mat-form-field>
+        <div *ngIf="formulario.controls['nick'].dirty || formulario.controls['nick'].touched" class="alert alert-danger">
+          <div *ngIf="formulario.get('nick')?.hasError('required')">
+            El nombre de usuario es requerido
+          </div>
+        </div>
 
-        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-form-field appearance="outline" class="field-width">
           <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="Escribe tu contraseña" type="password" [(ngModel)]="loginDto.password" name="password">
+          <input type="password" matInput placeholder="password" id="password" formControlName="password">
         </mat-form-field>
+        <div *ngIf="formulario.controls['password'].dirty || formulario.controls['password'].touched" class="alert alert-danger">
+          <div *ngIf="formulario.get('password')?.hasError('required')">
+            La contraseña es requerida
+          </div>
+        </div>
 
         <button mat-raised-button color="primary" (click)="doLogin()">Iniciar Sesión</button>
       </mat-card>
