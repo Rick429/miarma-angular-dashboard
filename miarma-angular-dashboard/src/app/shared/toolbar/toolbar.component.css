@@ -1,0 +1,9 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.buttonlog {
+  margin-top: 1%;
+}

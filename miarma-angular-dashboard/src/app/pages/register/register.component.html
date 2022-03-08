@@ -1,0 +1,87 @@
+<div class="contenedor">
+<form [formGroup]="formulario" class="form-register">
+  <mat-card class="card">
+    <span class="logo"><img src="../../../assets/img/logo_miarmapp.svg" width="200px"></span>
+    <mat-form-field appearance="outline" class="field-width">
+      <mat-label>Nombre de usuario</mat-label>
+      <input matInput placeholder="Nombre de usuario" name="nick" formControlName="nick" required>
+    </mat-form-field>
+    <div *ngIf="formulario.controls['nick'].dirty || formulario.controls['nick'].touched" class="alert alert-danger">
+      <div *ngIf="formulario.get('nick')?.hasError('required')">
+        El nombre de usuario es requerido
+      </div>
+      <div *ngIf="formulario.get('nick')?.hasError('minlength')">
+        El nombre de usuario debe tener más de 4 caracteres
+      </div>
+    </div>
+
+    <mat-form-field appearance="outline" class="field-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Nombre" name="name" formControlName="name" required>
+    </mat-form-field>
+    <div *ngIf="formulario.controls['name'].dirty || formulario.controls['name'].touched" class="alert alert-danger">
+      <div *ngIf="formulario.get('name')?.hasError('required')">
+        El nombre es requerido
+      </div>
+    </div>
+
+    <mat-form-field appearance="outline" class="field-width">
+      <mat-label>Apellidos</mat-label>
+      <input matInput placeholder="Apellidos" name="lastname" formControlName="lastname" required>
+    </mat-form-field>
+    <div *ngIf="formulario.controls['lastname'].dirty || formulario.controls['lastname'].touched" class="alert alert-danger">
+      <div *ngIf="formulario.get('lastname')?.hasError('required')">
+        Los apellidos son requeridos
+      </div>
+    </div>
+
+    <mat-form-field appearance="outline" class="field-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email" name="email" formControlName="email" required>
+    </mat-form-field>
+    <div *ngIf="formulario.controls['email'].dirty || formulario.controls['email'].touched" class="alert alert-danger">
+      <div *ngIf="formulario.get('email')?.hasError('required')">
+        El email es requerido
+      </div>
+      <div *ngIf="formulario.get('email')?.hasError('minlength')">
+        El email debe tener más de 4 caracteres
+      </div>
+    </div>
+
+    <div class="radiocontenedor">
+
+      <div class="radio">
+        <mat-label>Tipo de cuenta</mat-label>
+        <mat-label>Pública</mat-label>
+        <input type="radio" value='PUBLICA' name="tipocuenta" formControlName="tipocuenta">
+        <mat-label>Privada</mat-label>
+        <input type="radio" value='PRIVADA' name="tipocuenta" formControlName="tipocuenta">
+      </div>
+    </div>
+    <mat-form-field appearance="outline" class="field-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput placeholder="password" id="password" formControlName="password">
+    </mat-form-field>
+    <div *ngIf="formulario.controls['password'].dirty || formulario.controls['password'].touched" class="alert alert-danger">
+      <div *ngIf="formulario.get('password')?.hasError('required')">
+        La contraseña es requerida
+      </div>
+      <div *ngIf="formulario.get('password')?.hasError('minlength')">
+        La contraseña debe tener más de 4 caracteres
+      </div>
+    </div>
+
+    <mat-form-field appearance="outline" class="field-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput placeholder="Repita su contraseña" id="password2" formControlName="password2">
+    </mat-form-field>
+    <div *ngIf="formulario.controls['password2'].dirty || formulario.controls['password2'].touched" class="alert alert-danger">
+      <div *ngIf="formulario.get('password2')?.hasError('required')">
+        La contraseña es requerida
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="register()">Registrarse</button>
+  </mat-card>
+</form>
+</div>

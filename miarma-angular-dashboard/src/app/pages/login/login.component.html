@@ -1,0 +1,18 @@
+<div class="contenedor">
+    <form class="example-form">
+      <mat-card class="card">
+        <span class="logo"><img src="../../../assets/img/logo_miarmapp.svg" width="200px"></span>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Nombre de usuario</mat-label>
+          <input matInput placeholder="Escribe tu nombre de usuario" [(ngModel)]="loginDto.nick" name="nick">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Escribe tu contraseña" type="password" [(ngModel)]="loginDto.password" name="password">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="doLogin()">Iniciar Sesión</button>
+      </mat-card>
+    </form>
+</div>
