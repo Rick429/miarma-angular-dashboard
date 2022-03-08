@@ -21,13 +21,14 @@ export class PostService {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
     })
-    return this.http.get<PostResponse>(`${this.postBaseUrl}/all`, { headers: encabezados });
+    return this.http.get<PostResponse>(`${this.postBaseUrl}/all?size=400`, { headers: encabezados });
   }
 
   eliminarPost(id:number) {
     let encabezados= new HttpHeaders({
+      'Content-Type': 'application/json',
       'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
     })
-    return this.http.delete(`${this.postBaseUrl}/delete/${id}`, { headers: encabezados });
+    return this.http.delete(`${this.postBaseUrl}/${id}`, { headers: encabezados });
   }
 }
