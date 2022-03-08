@@ -5,7 +5,7 @@
         <h3 class="nick">{{postInput.nick}}</h3>
       </div>
       <div>
-        <mat-icon [matMenuTriggerFor]="menu">more_horiz</mat-icon>
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon >more_horiz</mat-icon></button>
         <mat-menu #menu="matMenu" >
           <button mat-menu-item (click)="deletePost(postInput.id)">Eliminar</button>
         </mat-menu>
@@ -18,12 +18,12 @@
   </mat-card-content>
   <mat-action-list>
     <div>
-      <mat-icon>favorite_border</mat-icon>
-      <mat-icon>message</mat-icon>
-      <mat-icon>send</mat-icon>
+      <button mat-button><mat-icon>favorite_border</mat-icon></button>
+      <button mat-button><mat-icon>message</mat-icon></button>
+      <button mat-button><mat-icon>send</mat-icon></button>
     </div>
     <div>
-        <mat-icon>bookmark_border</mat-icon>
+      <button mat-button><mat-icon>bookmark_border</mat-icon></button>
     </div>
   </mat-action-list>
   <mat-card-footer>

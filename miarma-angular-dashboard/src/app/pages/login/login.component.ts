@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       if(loginResult.token!=null) {
         localStorage.setItem(TOKEN, loginResult.token);
         localStorage.setItem(AVATAR, loginResult.avatar);
-        this.router.navigate(['/postlist']);
+        this.router.navigate(['/tablas']);
       }
 
     });

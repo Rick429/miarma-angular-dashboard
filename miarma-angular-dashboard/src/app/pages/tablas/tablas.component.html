@@ -2,13 +2,13 @@
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <mat-card>
       <mat-card-actions>
-      <button class="boton" type="button" mat-button (click)="drawer.toggle()">
+      <button class="boton" type="button" mat-button (click)="drawer.toggle()" (click)="changeTable(0)">
         Usuarios
       </button>
-      <button class="boton" type="button" mat-button (click)="drawer.toggle()">
+      <button class="boton" type="button" mat-button (click)="drawer.toggle()" (click)="changeTable(1)">
         Tabla de Posts
       </button>
-      <button class="boton" type="button" mat-button (click)="drawer.toggle()">
+      <button class="boton" type="button" mat-button (click)="drawer.toggle()" (click)="changeTable(2)">
         Lista de Posts
       </button>
     </mat-card-actions>
@@ -16,9 +16,24 @@
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
+    <mat-toolbar>
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="toolbar">
+        <div style="padding-top: 10px;">
+          <span><img src="../../../assets/img/logo_miarmapp.svg" width="40%"></span>
+        </div>
+      <div class="buttonlog">
+        <button (click)="logout()" type="button" mat-button>
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </div>
+    </mat-toolbar>
+      <app-user-table *ngIf="userTable"></app-user-table>
+      <app-post-table *ngIf="postTable"></app-post-table>
+      <app-post-list *ngIf="postList"></app-post-list>
   </div>
-
 </mat-drawer-container>
+

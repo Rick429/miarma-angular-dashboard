@@ -12,6 +12,10 @@ import { RegisterComponent } from './pages/register/register.component';
 import { PostListComponent } from './pages/post-list/post-list.component';
 import { PostItemComponent } from './components/post-item/post-item.component';
 import { TablasComponent } from './pages/tablas/tablas.component';
+import { PostTableComponent } from './pages/post-table/post-table.component';
+import { UserTableComponent } from './user-table/user-table.component';
+import { DialogGiveAdminComponent } from './dialogs/dialog-give-admin/dialog-give-admin.component';
+import { DialogDeletePostComponent } from './dialog-delete-post/dialog-delete-post.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { TablasComponent } from './pages/tablas/tablas.component';
     RegisterComponent,
     PostListComponent,
     PostItemComponent,
-    TablasComponent
+    TablasComponent,
+    PostTableComponent,
+    UserTableComponent,
+    DialogGiveAdminComponent,
+    DialogDeletePostComponent
   ],
   imports: [
     BrowserModule,

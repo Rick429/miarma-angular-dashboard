@@ -1,0 +1,61 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+    <mat-cell *matCellDef="let element index as i"> {{i+1}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="lastname">
+    <mat-header-cell *matHeaderCellDef> Apellidos </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.lastname}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nick">
+    <mat-header-cell *matHeaderCellDef> Nombre de Usuario </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.nick}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="datebirth">
+    <mat-header-cell *matHeaderCellDef> Fecha de Nacimiento </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.datebirth}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="avatar">
+    <mat-header-cell *matHeaderCellDef> Avatar </mat-header-cell>
+    <mat-cell *matCellDef="let element"><img src="{{element.avatar}}" width="30%"></mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="tipocuenta">
+    <mat-header-cell *matHeaderCellDef> Tipo de Cuenta </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.tipocuenta}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="role">
+    <mat-header-cell *matHeaderCellDef> Rol </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+    <mat-cell *matCellDef="let element"> <button mat-button (click)="openDialogGiveAdmin(element.id, element.role)"><mat-icon>security</mat-icon></button> </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
